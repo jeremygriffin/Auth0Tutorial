@@ -6,6 +6,16 @@ web:
         - .:/code
         - ./docker/nginx.conf:/etc/nginx/conf.d/site.conf
     links:
-        - php
-php:
+        - php-fpm
+        - db-maria
+php-fpm:
     image: php:7-fpm
+    links:
+        - db-maria
+db-maria:
+    image: mariadb
+    environment:
+        - MYSQL_ROOT_PASSWORD=SuperS3cr3t
+        - MYSQL_DATABASE=lauttest
+    volumes:
+        - ./docker/database:/var/lib/mysql
