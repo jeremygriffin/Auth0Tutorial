@@ -70,7 +70,7 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                         <p>
-                        <a href="{{ route('/logout') }}">logout</a>
+                        <a href="{{ route('logout') }}">logout</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
