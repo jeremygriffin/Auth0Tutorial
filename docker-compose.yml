@@ -18,5 +18,5 @@ db-maria:
     environment:
         - MYSQL_ROOT_PASSWORD=SuperS3cr3t
         - MYSQL_DATABASE=lauttest
-    volumes:
-        - ./docker/database:/var/lib/mysql
+#    volumes:
+#        - ./docker/database:/var/lib/mysql
