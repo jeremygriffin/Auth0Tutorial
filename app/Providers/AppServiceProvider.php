@@ -23,6 +23,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        // Auth0 binding.
+        $this->app->bind(
+            Auth0Contract::class,
+            UserRepo::class
+        );
     }
 }
