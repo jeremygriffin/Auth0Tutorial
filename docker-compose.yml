@@ -3,13 +3,14 @@ web:
     ports:
         - "8080:80"
     volumes:
-        - .:/code
-        - ./docker/nginx.conf:/etc/nginx/conf.d/site.conf
+        - ./:/code
+        - ./docker/nginx.conf:/etc/nginx/conf.d/default.conf
     links:
         - php-fpm
-        - db-maria
 php-fpm:
     image: php:7-fpm
+    volumes:
+        - ./:/code
     links:
         - db-maria
 db-maria:
