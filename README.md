@@ -62,21 +62,21 @@ docker exec -i -t <fpm docker container> php artisan migrate
 example:
 ```
 
-jgriffin@jgriffin-ThinkPad-A475  ~/Code/Auth0Tutorial   master ●  docker ps
+jgriffin@jgriffin-ThinkPad-A475 ~/Code/Auth0Tutorial > docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                NAMES
 cae5286de4de        nginx:latest        "nginx -g 'daemon of…"   11 minutes ago      Up 11 minutes       0.0.0.0:80->80/tcp   blah_web_1
 32686f983711        blah_php-fpm        "docker-php-entrypoi…"   11 minutes ago      Up 11 minutes       9000/tcp             blah_php-fpm_1
 1935a357b331        mariadb             "docker-entrypoint.s…"   11 minutes ago      Up 11 minutes       3306/tcp             blah_db-maria_1
 
-jgriffin@jgriffin-ThinkPad-A475  ~/Code/blah   master  docker exec -i -t blah_php-fpm_1 php artisan key:generate
+jgriffin@jgriffin-ThinkPad-A475 ~/Code/blah > docker exec -i -t blah_php-fpm_1 php artisan key:generate
 Application key set successfully.
-jgriffin@jgriffin-ThinkPad-A475  ~/Code/blah   master  docker exec -i -t blah_php-fpm_1 php artisan migrate     
+jgriffin@jgriffin-ThinkPad-A475 ~/Code/blah > docker exec -i -t blah_php-fpm_1 php artisan migrate     
 Migration table created successfully.
 Migrating: 2014_10_12_000000_create_users_table
 Migrated:  2014_10_12_000000_create_users_table
 Migrating: 2014_10_12_100000_create_password_resets_table
 Migrated:  2014_10_12_100000_create_password_resets_table
-jgriffin@jgriffin-ThinkPad-A475  ~/Code/blah   master  
+jgriffin@jgriffin-ThinkPad-A475 ~/Code/blah >
 
 ```
 
